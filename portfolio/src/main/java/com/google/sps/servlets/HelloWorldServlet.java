@@ -17,5 +17,6 @@ public class HelloWorldServlet extends HttpServlet {
     response.getWriter().println("<h1>You must be the change you wish to see in the world.</h1>");
     response.getWriter().println("<h1>That which does not kill us makes us stronger.</h1>");
     response.getWriter().println("<h1>There are mysteries to the universe we were never meant to solve, but who we are and why we are here are not among them. Those answers we carry inside.</h1>");
-  }
+    response.getWriter().println("<h1>If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.</h1>");
+     }
 }
