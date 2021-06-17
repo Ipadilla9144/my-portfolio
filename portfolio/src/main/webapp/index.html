@@ -5,8 +5,10 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <div class="multi-bg-example"></div>
   </head>
   <body>
+    
     <div id="content">
       <h1>Iann Padilla's Portfolio</h1>
       <p>This is my portfolio.</p>
@@ -27,6 +29,26 @@
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Quote</button>
       <div id="greeting-container"></div>
-    </div>
+  <form action="/form-handler" method="POST">
+    <p>Enter some text here:</p>
+    <textarea name="text-input">Write Something Here</textarea>
+    <br/>
+    <input type="submit" />
+<h1>Formhandler</h1>
+    <p>This is a form that sends a POST request to the server:</p>
+    <form action="/form-handler2" method="POST">
+      <input type="text" name="name-input" placeholder="Your Name"/>
+      <br/><br/>
+    <p>Choose your favorite entertainment:</p>
+      <select name="Entertainment-input">
+        <option value="Videogames">Videogames</option>
+        <option value="Read">Read</option>
+        <option value="Movies/Series">Movies/Series</option>
+      </select>
+      <br/><br/>
+      <textarea name="description-input" placeholder="Your Description"></textarea>
+      <br/><br/>
+      <input type="submit"/>
+    </form>
   </body>
 </html>
