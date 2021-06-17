@@ -17,7 +17,8 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['“I am Optimus Prime, and I send this message so that our pasts will always be remembered, for in those memories we live on."'];
+      ['Hey','Hola','Ciao!'];
+     
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -25,4 +26,11 @@ function addRandomGreeting() {
   // Add it to the page.
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
+
+  
 }
+
+
+
+
+
