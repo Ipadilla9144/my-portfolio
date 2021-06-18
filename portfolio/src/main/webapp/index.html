@@ -3,17 +3,140 @@
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script>
+      function requestTranslation() {
+        const text = document.getElementById('text').value;
+        const languageCode = document.getElementById('language').value;
+
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerText = 'Loading...';
+
+        const params = new URLSearchParams();
+        params.append('text', text);
+        params.append('languageCode', languageCode);
+
+        fetch('/translate', {
+          method: 'POST',
+          body: params
+        }).then(response => response.text())
+        .then((translatedMessage) => {
+          resultContainer.innerText = translatedMessage;
+        });
+      }
+    </script>
+
+    <style>
+      #text {
+        width: 500px;
+        height: 125px;
+      }
+
+      #language {
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+    </style>
+
   </head>
   <body>
+    <h1>Translation</h1>
+    <p>Type a message and select a language, then click submit to translate it.</p>
+
+    <textarea id="text"></textarea>
+
+    <select id="language">
+      <option value="es">English</option>
+      <option value="zh">Chinese</option>
+      <option value="es">Spanish</option>
+      <option value="hi">Hindi</option>
+      <option value="ar">Arabic</option>
+    </select>
+
+    <button onclick="requestTranslation();">Translate</button>
+
+    <hr/>
+    <div id="result"></div>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <div class="multi-bg-example"></div>
+  </head>
+  <body>
+    
     <div id="content">
-      <h1>My Portfolio</h1>
+      <h1>Iann Padilla's Portfolio</h1>
       <p>This is my portfolio.</p>
+      <p>My name is Iann S. Padilla Santiago.</p>
+      <p>I live in Puerto Rico.</p>
+      <p>Im studying computer engineering at Interamerican University of Puerto Rico.</p>
+      <img src="/images/Iann.gif" >
+      <p>Puerto Rico:</p>
+      <img src="/images/Puerto Rico.jpg" >
+      <p>My favorite drink:</p>
+      <img src="/images/cofee.jpg" />
+      <p>My favorite hobbies:<p>
+      <img src="/images/gamer.jpg" >
+      <img src="/images/read.jpg" />
+      <p>my favorite movie series and characters: </p>
+      <img src="/images/transformers.jpg">
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
       <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
+      <button onclick="addRandomGreeting()">Quote</button>
       <div id="greeting-container"></div>
-    </div>
+  <form action="/form-handler" method="POST">
+    <p>Enter some text here:</p>
+    <textarea name="text-input">Write Something Here</textarea>
+    <br/>
+    <input type="submit" />
+<h1>Formhandler</h1>
+    <p>This is a form that sends a POST request to the server:</p>
+    <form action="/form-handler2" method="POST">
+      <input type="text" name="name-input" placeholder="Your Name"/>
+      <br/><br/>
+    <p>Choose your favorite entertainment:</p>
+      <select name="Entertainment-input">
+        <option value="Videogames">Videogames</option>
+        <option value="Read">Read</option>
+        <option value="Movies/Series">Movies/Series</option>
+      </select>
+      <br/><br/>
+      <textarea name="description-input" placeholder="Your Description"></textarea>
+      <br/><br/>
+      <input type="submit"/>
+    </form>
+    </script>
+
+    <style>
+      #text {
+        width: 500px;
+        height: 125px;
+      }
+
+      #language {
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Translation</h1>
+    <p>Type a message and select a language, then click submit to translate it.</p>
+
+    <textarea id="text"></textarea>
+
+    <select id="language">
+      <option value="es">English</option>
+      <option value="zh">Chinese</option>
+      <option value="es">Spanish</option>
+      <option value="hi">Hindi</option>
+      <option value="ar">Arabic</option>
+    </select>
+
+    <button onclick="requestTranslation();">Translate</button>
+
+    <hr/>
+    <div id="result"></div>
   </body>
 </html>
